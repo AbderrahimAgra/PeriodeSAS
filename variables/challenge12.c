@@ -18,8 +18,8 @@ int main()
            scanf("%d",&b);
     printf("donner la valeur de troisieme chifre c \n");
            scanf("%d",&c);
-    printf("voici votre nombre entier sisaire %d \n",Entier=a*100+b*10+c);       
-    printf("voici votre chaine inversé %d \n",NbrInv=b*100+c*10+a);
+    printf("voici votre nombre entier sisaire %d%d%d \n",a,b,c);       
+    printf("voici votre chaine inversé %d%d%d \n",c,b,a);
     return 0;
 }
 
