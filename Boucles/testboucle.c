@@ -13,7 +13,7 @@ int main()
         }
         else
         {
-            printf("FAUX \n");
+            printf("FAUX il vous rest %d choix \n", 3-X );
         }
         X++;
 
