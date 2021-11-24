@@ -15,10 +15,13 @@ struct Client {
 };
 
   // BASE DE DONNEES
-Client clients[NB_CLIENT] ;
-int size = -1;
+Client clients[NB_CLIENT] = {
+  {"J509769", "AGRA", "Abderrahim", 10000},
+  {"JB77015", "ESSOUI", "khadija", 20000} 
+};
+int size = 2;
 
-// ####### LES FONCTIONS #######
+// ####### LES FONCTIONS prototype #######
 void introduireUnCompte();
 void introduirePlusieursComptes();
 void afficherUnClient(int index);
@@ -26,6 +29,8 @@ void operations();
 void retrait();
 void depot();
 int recherche(char* cin);
+void affichage();
+void rechercherParCIN();
 // ############################
 
 int main() {
@@ -56,7 +61,7 @@ int main() {
         operations();
         break;
       case 4:
-        printf("4");
+        affichage();
         break;
       case 5:
         printf("5");
@@ -223,7 +228,7 @@ void retrait() {
   }
 }
 
-/************************* depot de l'argent ***************************/
+/*************************  de l'argent ***************************/
 void depot() {
   int montant;
   char cin[20];
@@ -268,4 +273,45 @@ int recherche(char* cin) {
     }
   }
   return -1;
+}
+/************************* fonction d'affichage ***************************/
+void affichage() {
+  int choix;
+  do {
+      system("cls");
+      printf("##########  Affichage  ##########\n");
+      printf("\n-> Tapez 1 Pour afficher en ordre ascendant");
+      printf("\n-> Tapez 2 Pour afficher en ordre descendant");
+      printf("\n-> Tapez 3 Pour afficher en ordre ascendant (montant > chiffre introduit)");
+      printf("\n-> Tapez 4 Pour afficher en ordre descendant (montant > chiffre introduit)");
+      printf("\n-> Tapez 5 Pour Rechercher par CIN\n");
+      printf("\n=====>Votre choix : ");
+      scanf("%d",&choix);
+    switch(choix)
+    {
+        // case 1 : afficherOnOrdreAscendant(); break;
+        // case 2 : afficherOnOrdreDescendant(); break;
+        // case 3 : afficherOnOrdreAscendantSup(); break;
+        // case 4 : afficherOnOrdreAscendantSup(); break;
+        case 5 : rechercherParCIN() ; break;
+        default : printf("votre choix n'est pas valide. merci de refaire votre choix ");
+    }
+  } while (choix < 1 || choix > 5 );
+}
+
+/************************* Recherche Par CIN ***************************/
+void rechercherParCIN() {
+  char cin[20];
+  system("cls");
+  printf("\n##########  Recherche par CIN  ##########\n\n");
+  printf("=> Merci de saisir le CIN : ");
+  scanf("%s", cin);
+  int i = recherche(cin);
+  if(i == -1) {
+    printf("cette compte n'existe pas ");
+  } else {
+    printf("\n");
+    afficherUnClient(i);
+    printf("\n");
+  }
 }
