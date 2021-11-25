@@ -16,8 +16,8 @@ struct Client {
 
   // BASE DE DONNEES
 Client clients[NB_CLIENT] = {
-  {"jt1111", "Ali", "Ainab", 100},
-  {"jt2222", "Agra", "Abderrahim", 200},
+  {"JB77015", "AGRA", "Abderrahim", 15000},
+  {"J509769", "JABAN", "HANNANE", 20000},
 };
 int size = 2;
 
@@ -39,6 +39,8 @@ int main() {
   do
   {
     system("cls");
+    printf("\n______________________________________________________________");
+    printf("\n______________________YOU BANC _______________________________\n");
     printf("\n##########   Merci de determiner votre choix ?   ##########\n\n");
     printf("-> Tapez 1 pour Introduire un compte bancaire\n");
     printf("-> Tapez 2 Pour Introduire plusieurs comptes bancaires \n");
@@ -64,7 +66,7 @@ int main() {
         affichage();
         break;
       case 5:
-        printf("5");
+        printf("Cette operation n'est pas disponible pour le moment");
         break;
       case 6:
         exit(0);
