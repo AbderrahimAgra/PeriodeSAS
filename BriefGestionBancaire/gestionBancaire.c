@@ -17,7 +17,7 @@ struct Client {
   // BASE DE DONNEES
 Client clients[NB_CLIENT] = {
   {"JB77015", "AGRA", "Abderrahim", 15000},
-  {"J509769", "JABAN", "HANNANE", 20000},
+  {"J509769", "KHAYRO", "ADNAN", 20000},
 };
 int size = 2;
 
